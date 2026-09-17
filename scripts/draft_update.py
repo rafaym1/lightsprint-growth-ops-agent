@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draft updated comparison copy for a competitor whose tracked page changed.
 
-Calls the Claude API with the current entry, the house style guide, and the
+Calls the Gemini API with the current entry, the house style guide, and the
 detected diff, and asks for a small, honest rewrite -- never a wholesale
 rewrite untethered from what actually changed.
 """
@@ -9,12 +9,12 @@ import json
 import os
 from pathlib import Path
 
-import anthropic
+from google import genai
 
 ROOT = Path(__file__).parent.parent
 STYLE_GUIDE = (ROOT / "scripts" / "style_guide.md").read_text(encoding="utf-8")
 
-MODEL = "claude-sonnet-5"
+MODEL = "gemini-3.8-flash"
 
 PROMPT_TEMPLATE = """You maintain LightSprint's competitor comparison page. Below is the \
 current entry for "{name}", the style guide it must follow, and the {change_kind} in \
@@ -41,8 +41,8 @@ for a PR description explaining what changed on their side and what, if anything
 updated and why"}}"""
 
 
-def _client() -> anthropic.Anthropic:
-    return anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+def _client() -> genai.Client:
+    return genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 
 def draft_for(entry: dict, diff_result: dict) -> dict:
@@ -56,12 +56,8 @@ def draft_for(entry: dict, diff_result: dict) -> dict:
         url=entry["track_url"],
         diff_text=(diff_result["diff"] or diff_result["new_text"])[:6000],
     )
-    resp = _client().messages.create(
-        model=MODEL,
-        max_tokens=600,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    text = resp.content[0].text.strip()
+    resp = _client().models.generate_content(model=MODEL, contents=prompt)
+    text = resp.text.strip()
     if text.startswith("```"):
         text = text.split("\n", 1)[1]
         text = text.rsplit("```", 1)[0].strip()

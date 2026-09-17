@@ -16,7 +16,7 @@ growth content instead of product code.
       |         |          |            |
       v         v          v            v
    fetch  ->  diff   ->  draft   ->  open_pr
-  (Playwright) (stdlib)  (Claude API)  (gh CLI)
+  (Playwright) (stdlib)  (Gemini API)  (gh CLI)
 ```
 
 1. **Fetch** (`scripts/fetch_snapshot.py`) -- for each competitor in
@@ -33,7 +33,7 @@ growth content instead of product code.
    (~3%) count, so date stamps and ad copy churn don't trigger false
    positives.
 3. **Draft** (`scripts/draft_update.py`) -- on a real change, calls the
-   Claude API with the current comparison entry, the diff, and
+   Gemini API with the current comparison entry, the diff, and
    `scripts/style_guide.md` (a tone guide distilled from LightSprint's own
    site copy), and asks for a small, evidence-only rewrite of the two lines
    that describe the comparison. It's explicitly told to leave copy
@@ -66,7 +66,7 @@ One secret is required, and it has to be set by a human -- an agent should
 never handle its own API key:
 
 ```bash
-gh secret set ANTHROPIC_API_KEY --repo <owner>/<repo>
+gh secret set GEMINI_API_KEY --repo <owner>/<repo>
 ```
 
 (paste the key when prompted; nothing is echoed or logged)
