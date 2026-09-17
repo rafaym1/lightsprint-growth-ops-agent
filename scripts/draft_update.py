@@ -41,8 +41,18 @@ for a PR description explaining what changed on their side and what, if anything
 updated and why"}}"""
 
 
+_CLIENT: genai.Client | None = None
+
+
 def _client() -> genai.Client:
-    return genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    # Must be a long-lived singleton, not created-and-chained per call: the
+    # SDK ties its underlying httpx client's lifecycle to the Client object,
+    # and a bare temporary (`_client().models...`) gets torn down mid-request
+    # ("RuntimeError: Cannot send a request, as the client has been closed").
+    global _CLIENT
+    if _CLIENT is None:
+        _CLIENT = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    return _CLIENT
 
 
 def draft_for(entry: dict, diff_result: dict) -> dict:
