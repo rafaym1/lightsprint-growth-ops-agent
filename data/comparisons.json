@@ -1,0 +1,37 @@
+{
+  "product": "LightSprint",
+  "tagline": "Like Google Docs for coding agents",
+  "last_updated": "2026-09-17",
+  "competitors": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "Coding Agents and Editors",
+      "track_url": "https://claude.com/product/claude-code",
+      "stronger_for": "terminal-first workflow and direct access to Anthropic models",
+      "lightsprint_better_for": "teams that want Claude or other agents inside one shared, visual, governed delivery session",
+      "last_reviewed": "2026-09-17",
+      "source": "lightsprint.ai/compare (baseline captured 2026-09-17)"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "Coding Agents and Editors",
+      "track_url": "https://cursor.com/pricing",
+      "stronger_for": "a developer who wants AI editing, completion, and agent work inside an IDE",
+      "lightsprint_better_for": "product teams that need non-engineers and engineers to plan, steer, review, and ship together",
+      "last_reviewed": "2026-09-17",
+      "source": "lightsprint.ai/compare (baseline captured 2026-09-17)"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "category": "Coding Agents and Editors",
+      "track_url": "https://openai.com/codex/",
+      "stronger_for": "a developer already standardized on ChatGPT and OpenAI",
+      "lightsprint_better_for": "teams that want Codex alongside other agents with shared context and live previews",
+      "last_reviewed": "2026-09-17",
+      "source": "lightsprint.ai/compare (baseline captured 2026-09-17)"
+    }
+  ]
+}
