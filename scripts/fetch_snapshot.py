@@ -24,9 +24,16 @@ USER_AGENT = (
 
 def fetch_rendered_html(url: str, timeout_ms: int = 30000) -> str:
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        # channel="chromium" forces the full Chromium build rather than the
+        # separate headless-shell variant, so only `playwright install
+        # chromium` is needed (no extra headless-shell download).
+        browser = p.chromium.launch(channel="chromium")
         page = browser.new_page(user_agent=USER_AGENT)
-        page.goto(url, timeout=timeout_ms, wait_until="networkidle")
+        # "networkidle" hangs on pages with persistent background activity
+        # (analytics, websockets) -- wait for "load" plus a short settle
+        # window for post-load hydration instead.
+        page.goto(url, timeout=timeout_ms, wait_until="load")
+        page.wait_for_timeout(2000)
         html = page.content()
         browser.close()
         return html
