@@ -7,6 +7,7 @@ human maintaining this by hand would reach for too.
 """
 import json
 import subprocess
+import uuid
 from datetime import date, timezone, datetime
 from pathlib import Path
 from typing import Optional
@@ -16,7 +17,15 @@ COMPARISONS_FILE = ROOT / "data" / "comparisons.json"
 
 
 def _run(*args: str) -> subprocess.CompletedProcess:
-    return subprocess.run(args, check=True, text=True, capture_output=True, cwd=ROOT)
+    try:
+        return subprocess.run(args, check=True, text=True, capture_output=True, cwd=ROOT)
+    except subprocess.CalledProcessError as e:
+        # check=True's default traceback hides stdout/stderr, which is where
+        # the actual reason (e.g. gh CLI's error message) lives -- surface it.
+        print(f"[open_pr] command failed: {' '.join(args)}")
+        print(f"[open_pr] stdout: {e.stdout}")
+        print(f"[open_pr] stderr: {e.stderr}")
+        raise
 
 
 def open_pr_for_updates(updates: list[dict]) -> Optional[str]:
@@ -24,7 +33,11 @@ def open_pr_for_updates(updates: list[dict]) -> Optional[str]:
         return None
 
     today = date.today().isoformat()
-    branch = f"growth-ops/{today}-{'-'.join(u['cid'] for u in updates)}"
+    # Short random suffix: a same-day retry after a failed PR (e.g. gh pr
+    # create rejected, as happened on the first real run before PR-creation
+    # was enabled for this repo) must not collide with the branch it left
+    # behind on the remote.
+    branch = f"growth-ops/{today}-{'-'.join(u['cid'] for u in updates)}-{uuid.uuid4().hex[:6]}"
     _run("git", "checkout", "-b", branch)
 
     comparisons = json.loads(COMPARISONS_FILE.read_text(encoding="utf-8"))
