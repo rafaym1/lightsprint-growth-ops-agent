@@ -33,7 +33,14 @@ def main() -> None:
 
         label = "new page, capturing baseline" if diff_result["is_new"] else "change detected"
         print(f"[{cid}] {label}, drafting update")
-        draft = draft_for(by_id[cid], diff_result)
+        try:
+            draft = draft_for(by_id[cid], diff_result)
+        except Exception as e:
+            # One competitor's draft failing (rate limit, bad JSON from the
+            # model, etc.) shouldn't sink a run that found real changes
+            # elsewhere -- skip it, keep going, still open a PR for the rest.
+            print(f"[{cid}] drafting failed, skipping this competitor: {e}")
+            continue
         updates.append({
             "cid": cid,
             "draft": draft,

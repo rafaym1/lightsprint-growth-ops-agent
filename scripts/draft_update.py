@@ -7,9 +7,11 @@ rewrite untethered from what actually changed.
 """
 import json
 import os
+import time
 from pathlib import Path
 
 from google import genai
+from google.genai import errors as genai_errors
 
 ROOT = Path(__file__).parent.parent
 STYLE_GUIDE = (ROOT / "scripts" / "style_guide.md").read_text(encoding="utf-8")
@@ -55,6 +57,22 @@ def _client() -> genai.Client:
     return _CLIENT
 
 
+def _generate_with_retry(prompt: str, attempts: int = 4):
+    # Gemini's own error message for a 503 says the overload is "usually
+    # temporary" -- seen live on the first real run. Back off and retry
+    # rather than failing the whole pipeline over a transient server blip.
+    delay = 3
+    for attempt in range(1, attempts + 1):
+        try:
+            return _client().models.generate_content(model=MODEL, contents=prompt)
+        except genai_errors.ServerError:
+            if attempt == attempts:
+                raise
+            print(f"[draft] Gemini 503, retrying in {delay}s (attempt {attempt}/{attempts})")
+            time.sleep(delay)
+            delay *= 2
+
+
 def draft_for(entry: dict, diff_result: dict) -> dict:
     change_kind = "initial page capture" if diff_result["is_new"] else "change"
     prompt = PROMPT_TEMPLATE.format(
@@ -66,7 +84,7 @@ def draft_for(entry: dict, diff_result: dict) -> dict:
         url=entry["track_url"],
         diff_text=(diff_result["diff"] or diff_result["new_text"])[:6000],
     )
-    resp = _client().models.generate_content(model=MODEL, contents=prompt)
+    resp = _generate_with_retry(prompt)
     text = resp.text.strip()
     if text.startswith("```"):
         text = text.split("\n", 1)[1]
