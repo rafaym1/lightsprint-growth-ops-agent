@@ -8,10 +8,10 @@
       "name": "Claude Code",
       "category": "Coding Agents and Editors",
       "track_url": "https://claude.com/product/claude-code",
-      "stronger_for": "terminal-first workflow and direct access to Anthropic models",
-      "lightsprint_better_for": "teams that want Claude or other agents inside one shared, visual, governed delivery session",
+      "stronger_for": "TEST-DRY-RUN stronger_for placeholder",
+      "lightsprint_better_for": "TEST-DRY-RUN lightsprint_better_for placeholder",
       "last_reviewed": "2026-09-17",
-      "source": "lightsprint.ai/compare (baseline captured 2026-09-17)"
+      "source": "growth-ops-agent, auto-drafted 2026-09-17"
     },
     {
       "id": "cursor",
