@@ -1,0 +1,94 @@
+Claude Code
+Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
+Claude Code is included in Claude Pro and Max plans. See plans
+Available for macOS, Linux, and Windows.
+Other ways to use Claude Code:
+export function ThemeProvider({children}: {children: ReactNode}) {  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')  const stored = localStorage.getItem('theme')  const [mode, setMode] = useState(stored ?? (prefersDark ? 'dark' : 'light'))   useEffect(() => {    localStorage.setItem('theme', mode)  }, [mode])   return (    <ThemeContext.Provider value={{mode, setMode}}>      {children}
+Get started with Claude Code
+Pro
+Claude Code is included in your Pro plan. Perfect for short coding sprints in small codebases.
+Max 5x
+Claude Code is included in your Max plan. Great value for everyday use in larger codebases.
+Max 20x
+Even more Claude Code included in your Max plan. Great value for power users with the most access to Claude models.
+Latest feature announcements
+What Claude Code can take on
+Claude Code builds the plan, asks clarifying questions, and handles work that runs for hours or days.
+I'm new to this codebase. Can you explain it to me?
+⏺︎ I'll analyze the Excalidraw codebase structure and provide a high-level overview.
+⏺︎ Analyze(what: "Excalidraw codebase structure and provide a high-level overview of what it is, its main components, and how they're organized. Focus on understanding the project's purpose, architecture, and key features.")
+Excalidraw is an open-source virtual whiteboard application with a hand-drawn style. It's designed for creating diagrams, wireframes, and collaborative drawings.
+## Purpose
+- Web-based drawing tool with infinite canvas
+- Hand-drawn aesthetic with support for shapes, arrows, text
+- End-to-end encrypted collaboration
+- Works offline as a PWA (Progressive Web App)
+## Architecture
+The project is organized as a monorepo with these main components:
+1. Core Package (packages/excalidraw)
+- React component library for embedding Excalidraw in any application
+- Handles drawing, rendering, and core functionality
+- Uses roughjs for the hand-drawn style
+- Includes export capabilities (PNG, SVG)
+2. Web Application (excalidraw-app/)
+- Full-featured web app at excalidraw.com
+- Built on top of the core package
+- Adds collaboration features, local storage, sharing
+3. Support Packages
+- common - Shared utilities and constants
+- element - Element manipulation and type definitions
+- math - Mathematical functions for drawing
+- utils - General utility functions
+4. Examples
+- Integration examples (Next.js, browser script)
+- Shows how to embed Excalidraw in different environments
+5. Documentation (dev-docs/)
+- API documentation
+- Integration guides
+- Component documentation
+## Key Features
+- Real-time collaboration with end-to-end encryption
+- Export to various formats (PNG, SVG, JSON)
+- Customizable drawing tools (rectangle, circle, arrows, freehand)
+- Dark mode support
+- Localization
+- Library of shapes and components
+- Arrow bindings and labels
+- Image support
+## Technology Stack
+- React for UI
+- TypeScript for type safety
+- Firebase for collaboration backend
+- Jotai for state management
+- Vite for development and building
+- IndexedDB/LocalStorage for offline storage
+The architecture allows for both using Excalidraw as a component in other applications and as a standalone web application with additional features.
+- Code onboardingClaude Code maps and explains entire codebases in a few seconds. It uses agentic search to understand project structure and dependencies without you having to manually select context files.
+- Turn issues into PRsStop bouncing between tools. Claude Code works with GitHub, GitLab, and your command line tools to read issues, write code, run tests, and open pull requests.
+- Run multi-hour refactors and migrationsClaude Code follows imports across the repo, runs your tests, and keeps going when something breaks.
+Meets you where you code
+Start in your terminal
+Super powerful terminal integration. Works with all your CLI tools alongside any IDE.
+Integrate with your editor
+Native extensions for VS Code (+ Cursor, Devin Desktop) and JetBrains IDEs.
+Access anywhere
+Quick access from browser, mobile app, or Claude on desktop. Great for parallel work or on-the-go coding.
+What developers are saying
+ Read story“Claude Code has dramatically accelerated our team's coding efficiency. I can now write EDA code in a notebook—pulling data, training a model, and evaluating it with basic metrics—and then ask Claude to convert that into a Metaflow pipeline. This process saves 1-2 days of routine (and often boring!) work per model.”
+ Read story“With Claude, we're not just automating customer service—we're elevating it to truly human quality. This lets support teams think more strategically about customer experience and what makes interactions genuinely valuable.”
+ Read story“Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
+Connects with your favorite command line tools
+Your terminal is where real work happens. Claude Code connects with the tools that power development—deployment, databases, monitoring, version control. Rather than adding another interface to juggle, it enhances your existing stack.
+FAQ
+You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan, or a Claude Console account. Download Claude Code and sign in with your respective Claude or Console credentials.
+Claude Code can handle routine work like bug fixes and testing, and larger jobs like refactors and new features that are long-running and asynchronous.
+You set the direction as the architect and orchestrator, and Claude Code does the work. Describe what you want and it plans, writes code, runs tests, and opens pull requests. It can work on several tasks at once, and surface decisions you need to make for it to keep going.
+Claude Code runs in your terminal and works alongside your preferred IDE and development tools without requiring you to change your workflow. Claude Code can also use command line tools (like Git) and MCP servers (like GitHub) to extend its own capabilities using your tools.
+Yes. Claude Code runs locally in your terminal and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Claude Code works on macOS, Linux, and Windows. See full system requirements.
+When used with a Claude Console account, Claude Code consumes API tokens at standard API pricing.
+Yes. Max, Pro, Team, and Enterprise users can access Claude Code on the Claude desktop app.
+Fast mode is a high-speed configuration for Opus 5, making the model 2.5x faster at a higher cost per token. Fast mode is available:
+- In research preview on Claude Code, and is priced at $10/$50 per million tokens.
+- On consumption-based plans.
+- Via usage credits for users on subscription plans.

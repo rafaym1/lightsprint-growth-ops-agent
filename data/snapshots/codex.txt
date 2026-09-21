@@ -1,0 +1,20 @@
+Codex
+The best way to build with agents
+Built to drive real engineering work
+From routine pull requests to your hardest problems, Codex reliably completes tasks end to end, like building features, complex refactors, migrations, and more, powered by OpenAI’s frontier coding models.
+Designed for multi-agent workflows
+Codex in ChatGPT is a command center for agentic coding. With built-in worktrees and cloud environments, agents work in parallel across projects, completing weeks of work in days.
+Adapts to how your team builds
+With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision.
+Made for always-on background work
+Schedule Codex to pick up routine but important work like issue triage, alert monitoring, CI/CD, and more, so your team can stay focused on building.
+Raises the bar across your team
+Codex raises baseline quality with more thorough designs, comprehensive testing, and high-signal code review—so issues are caught early and your team ships with confidence.
+The same agent everywhere you code
+What builders are saying
+“At Wonderful, Codex CLI has completely replaced every other agentic harness for our core technology and architecture work requiring deep reasoning and understanding.”
+“At Harvey, Codex transformed how we build by cutting early iteration time by 30–50%, freeing engineers to focus on system design and high-leverage decisions.”
+“With Codex, we ship in a weekend what previously took a quarter. It’s become our go-to for projects we wouldn’t have otherwise been able to take on.”
+“The recent Codex releases have been a step change. Codex PR reviews catch bugs our team would have missed, and we ship with more confidence because of it. Now we’re pulling the CLI and desktop app into more of our workflows—each release raises the bar.”
+“Codex performed best in our backend Python code-review benchmark. It was the only one to catch tricky backward compatibility issues and consistently found the hard bugs that other bots missed.”
+“I needed to update another team’s codebase for a release. Codex handled the refactor and test generation, delivering fully tested code I handed back fast—keeping the feature on schedule without added risk.”
