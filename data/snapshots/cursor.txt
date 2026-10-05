@@ -1,0 +1,44 @@
+Pricing
+Hobby
+For the tinkerer
+Free
+Includes:
+- ✓ No credit card required
+- ✓ Limited Agent requests
+- ✓ Access to Composer
+Individual
+For the agent-curious
+$20 / mo.
+Everything in Hobby, plus:
+- ✓ Extended limits on Agent
+- ✓ Generous limits for Grok
+- ✓ Access to frontier models
+- ✓ Grok Bot access
+- ✓ MCPs, skills, and hooks
+- ✓ Cloud agents
+- ✓ Bugbot on usage-based billing
+Teams
+For teams that ship together
+$40 / user / mo.
+Everything on Individual, plus:
+- ✓ Centralized team billing and administration
+- ✓ Team marketplace for internal rules, skills, and plugins
+- ✓ Cloud agents and automations with shared team context
+- ✓ Grok Bot access
+- ✓ Agentic code reviews with Bugbot
+- ✓ Usage analytics to understand team behavior
+- ✓ Team-wide privacy mode
+- ✓ SAML/OIDC SSO
+Enterprise
+For scaled organizations
+Custom
+Everything on Teams, plus:
+- ✓ Pooled usage
+- ✓ Invoice/PO billing
+- ✓ SCIM seat management
+- ✓ Repository, model, and MCP access controls
+- ✓ Auto-run, browser, and network controls
+- ✓ Audit logs and service accounts
+- ✓ AI code tracking API
+- ✓ Access, network, and audit controls for Grok Bot
+- ✓ Priority support and account management
