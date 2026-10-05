@@ -1,7 +1,7 @@
 {
   "product": "LightSprint",
   "tagline": "Like Google Docs for coding agents",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-10-05",
   "competitors": [
     {
       "id": "claude-code",
@@ -20,8 +20,8 @@
       "track_url": "https://cursor.com/pricing",
       "stronger_for": "a developer who wants AI editing, completion, and agent work inside an IDE",
       "lightsprint_better_for": "product teams that need non-engineers and engineers to plan, steer, review, and ship together",
-      "last_reviewed": "2026-09-17",
-      "source": "lightsprint.ai/compare (baseline captured 2026-09-17)"
+      "last_reviewed": "2026-10-05",
+      "source": "growth-ops-agent, auto-drafted 2026-10-05"
     },
     {
       "id": "codex",
