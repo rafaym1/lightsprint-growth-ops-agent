@@ -1,0 +1,31 @@
+Codex | AI Coding Partner from OpenAI | OpenAI
+Build anything with Codex
+Get started
+Plus
+Includes Codex usage for focused coding sessions each week.
+Pro
+Higher usage limits to power full workdays across multiple projects.
+Business
+Secure, shared workspace with admin controls and flexible pricing for teams using Codex across repositories.
+The best way to build with agents
+Built to drive real engineering work
+Give Codex your toughest engineering problems, from hard-to-find bugs to complex refactors and new features. Codex works efficiently, delivering high-quality results with fewer tokens.
+Designed for multi-agent workflows
+Codex runs many agents in parallel, using computer and browser tools to verify work until your requirements are met. Follow progress, steer agents, and review results in one place.
+Keep tasks moving in the cloud
+Codex keeps going when you close your laptop, with reusable cloud environments for every repo. Start tasks, follow progress, and pick up where you left off from another device.
+Scale code review confidently
+Keep code changes moving as your team builds faster. Codex automatically reviews pull requests, surfaces findings, and answers questions, so you can focus where your judgment is needed most.
+Bring Codex directly to your workflows
+The same agent everywhere you code
+Codex in ChatGPT
+Codex cloud
+Codex IDE extension
+Codex CLI
+What builders are saying
+“At Wonderful, Codex CLI has completely replaced every other agentic harness for our core technology and architecture work requiring deep reasoning and understanding.”
+“At Harvey, Codex transformed how we build by cutting early iteration time by 30–50%, freeing engineers to focus on system design and high-leverage decisions.”
+“With Codex, we ship in a weekend what previously took a quarter. It’s become our go-to for projects we wouldn’t have otherwise been able to take on.”
+“The recent Codex releases have been a step change. Codex PR reviews catch bugs our team would have missed, and we ship with more confidence because of it. Now we’re pulling the CLI and desktop app into more of our workflows—each release raises the bar.”
+“Codex performed best in our backend Python code-review benchmark. It was the only one to catch tricky backward compatibility issues and consistently found the hard bugs that other bots missed.”
+“I needed to update another team’s codebase for a release. Codex handled the refactor and test generation, delivering fully tested code I handed back fast—keeping the feature on schedule without added risk.”
