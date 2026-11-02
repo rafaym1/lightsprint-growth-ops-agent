@@ -1,0 +1,65 @@
+Pricing
+Free
+$0/month
+Get started with:
+Limited
+AI usage
+AI Features
+- Limited agent requests
+- Limited Chat requests
+Features
+- Post, reply, and follow
+Plus
+$8/month
+Our introductory plan:
+Shared
+AI usage pool
+AI Features
+- Cursor
+- Grok Chat, Voice, Imagine, and Build
+- Grok API access
+Features
+- Premium checkmark
+- Less timeline ads
+- Enhanced creator tools
+- Advanced Analytics
+*Only Grok models are available on this plan
+Premium
+Most popular
+$30/month
+Everything in Plus, and:
+4x
+more usage compared to Plus
+AI Features
+- Latest Grok models
+- Cloud agents & automations
+- Code hosting & AI code reviews
+- Third-party models at API list price
+- Grok Bot
+- Faster Chat responses
+- Make stunning AI images & videos
+Features
+- Ad-free scrolling on most surfaces
+- Preferred @handle
+- Higher reply boost
+*3rd party models are available in Cursor, billed separately by usage
+Super
+$100/month
+Everything in Premium, and:
+15x
+more usage compared to Plus
+AI Features
+- Priority model access at peak times
+*3rd party models are available in Cursor, billed separately by usage
+Ultra
+$200/month
+Everything in Super, and:
+50x
+more usage compared to Plus
+AI Features
+- Earliest access to all products & models
+*3rd party models are available in Cursor, billed separately by usage
+Prices shown do not include applicable taxes or fees (e.g. VAT). Third Party model usage in Cursor is not included in the monthly prices shown and must be purchased separately. View usage charges. Cancel anytime, at least 24 hours prior to renewal to avoid additional charges. Prices subject to change.
+Questions & Answers
+Every tier includes a pool of AI usage shared across Cursor and Grok. Within Grok, the pool covers Chat, Imagine, Voice, and Bot. Higher tiers include larger pools, and usage costs vary by product. Your allowance refreshes weekly, so one heavy day never wipes out your whole month.
+If you reach your included usage, you can keep going with top-offs, or wait for your allowance to refresh. You'll always see your remaining usage in settings. See our docs for more details.
